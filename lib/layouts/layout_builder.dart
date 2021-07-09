@@ -12,10 +12,11 @@ class Layout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       key: scaffoldKey,
       // appBar: topNavigationBar(context, scaffoldKey),
-      drawer: AppDrawer(),
+      // drawer: AppDrawer(),
       body: ResponsiveWidget(
         largeScreen: LargeScreenLayout(),
         mediumScreen: MediumScreenLayout(),

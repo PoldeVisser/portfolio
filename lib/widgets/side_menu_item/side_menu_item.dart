@@ -16,9 +16,9 @@ class SideMenuItem extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, color: dark, size: 24,),
+            Icon(icon, color: blue5, size: 24,),
             SizedBox(width: 20,),
-            Text(menuItemName, style: TextStyle(fontSize: 24, color: dark),),
+            Text(menuItemName, style: TextStyle(fontSize: 24, color: blue5),),
           ],
         ),
       ),

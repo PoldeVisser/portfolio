@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:web_portfolio/constants/style.dart';
 import 'package:web_portfolio/constants/tabs.dart';
+import 'package:web_portfolio/widgets/appbars/top_bar_desktop.dart';
 
 class LargeScreenLayout extends StatelessWidget {
   const LargeScreenLayout({Key? key}) : super(key: key);
@@ -7,51 +9,38 @@ class LargeScreenLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size _screenSize = MediaQuery.of(context).size;
-    return SingleChildScrollView(
-      physics: ScrollPhysics(),
-      primary: true,
-      scrollDirection: Axis.vertical,
-      child: Column(
-        children: [
-          Container(
-            height: _screenSize.height * 0.14,
-            width: _screenSize.width,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+    return Column(
+      children: [
+        TopBarDesktop(screenSize: _screenSize),
+        Expanded(
+          child: Center(
+            child: Container(
+              height: _screenSize.height * 0.4,
+              width: _screenSize.width * 0.4,
+              // color: Theme.of(context).accentColor,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  IconButton(
-                    onPressed: () {},
-                    // Center icon in iconbutton
-                    padding: const EdgeInsets.only(),
-                    icon: Icon(
-                      Icons.change_history,
-                      size: 32,
-                      color: Theme.of(context).primaryColor,
+                  Container(height: 100, width: 100, color: blue2),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      height: 30,
+                      width: 30,
+                      color: blue3,
                     ),
                   ),
-                  Spacer(),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 8,
-                      ),
-                      child: DefaultTabController(
-                        length: tabs.length,
-                        child: TabBar(
-                          indicatorColor: Colors.transparent,
-                          onTap: null,
-                          tabs: tabs,
-                        ),
-                      ),
-                    ),
+                  Container(
+                    height: 100,
+                    width: 100,
+                    color: blue4,
                   ),
                 ],
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
