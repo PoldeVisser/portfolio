@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:web_portfolio/constants/tabs.dart';
 
 class TopBarDesktop extends StatelessWidget {
-  final Size screenSize;
+    static double topBarHeight = 80.0;
 
-  const TopBarDesktop({Key? key, required this.screenSize}) : super(key: key);
+  const TopBarDesktop({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
     // TODO make scrolling in sliverappbar smooth on web
-    return SliverAppBar(
+    return AppBar(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       title: Text(
         'Portfolio website',
         style: Theme.of(context).textTheme.headline6,
       ),
-      floating: true,
       leading: Icon(
         Icons.change_history,
         size: 32,

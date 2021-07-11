@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:web_portfolio/layouts/medium_screen_layout.dart';
 import 'package:web_portfolio/layouts/small_screen_layout.dart';
+import 'package:web_portfolio/helpers/smooth_scrolling_pageview_builder.dart';
 // import 'package:web_portfolio/widgets/appbars/top_bar_mobile.dart';
 import 'package:web_portfolio/widgets/drawers/app_drawer.dart';
 import 'package:web_portfolio/widgets/responsive_widget.dart';
@@ -18,7 +19,8 @@ class Layout extends StatelessWidget {
       // appBar: topNavigationBar(context, scaffoldKey),
       // drawer: AppDrawer(),
       body: ResponsiveWidget(
-        largeScreen: LargeScreenLayout(),
+        largeScreen: SmoothScrollingPageViewBuilder(),
+        // largeScreen: LargeScreenLayout(),
         mediumScreen: MediumScreenLayout(),
         smallScreen: SmallScreenLayout(),
       ),
